@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\jadwal;
+
 use App\Models\Jadwal;
 use App\Models\MataKuliah;
 use App\Models\Sesi;
