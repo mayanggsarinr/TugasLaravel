@@ -11,8 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('jadwals', function (Blueprint $table) {
+        Schema::create('jadwal', function (Blueprint $table) {
             $table->id();
+            $table->string('tahun_akademik', 10);
+            $table->string('kode_smt', 10);
+            $table->string('kelas', 20);
+            $table->foreignId('mata_kuliah_id')->constrained('mata_kuliah')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreignId('user_id')->constrained('users')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreignId('sesi_id')->constrained('sesi')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
         });
     }

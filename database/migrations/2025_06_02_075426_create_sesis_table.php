@@ -10,9 +10,10 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
-        Schema::create('sesis', function (Blueprint $table) {
+     {
+        Schema::create('sesi', function (Blueprint $table) {
             $table->id();
+            $table->string('nama', 100);
             $table->timestamps();
         });
     }
