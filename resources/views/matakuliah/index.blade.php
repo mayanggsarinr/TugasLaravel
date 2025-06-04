@@ -47,7 +47,7 @@
                     <tr>
                         <td>{{ $item->kode_mk }}</td>
                         <td>{{ $item->nama }}</td>
-                        <td>{{ $item->prodi->nama }}</td>
+                        <td>{{ $item->prodi?->nama ?? 'Prodi tidak ditemukan' }}</td>
                         <td>
                             <a href="{{ route('matakuliah.show', $item->id) }}" class="btn btn-info">Show</a>
                             <a href="{{ route('matakuliah.edit', $item->id) }}" class="btn btn-warning">Edit</a>

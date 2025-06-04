@@ -10,12 +10,10 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
-         Schema::create('mata_kuliah', function (Blueprint $table) {
+     {
+        Schema::create('sesi', function (Blueprint $table) {
             $table->id();
-            $table->string('kode_mk', 6);
-            $table->string('nama', 30);
-            $table->foreignId('prodi_id')->constrained('prodi')->onDelete('restrict')->onUpdate('restrict');
+            $table->string('nama', 100);
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('mata_kuliahs');
+        Schema::dropIfExists('sesi');
     }
 };

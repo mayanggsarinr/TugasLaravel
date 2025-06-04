@@ -1,6 +1,13 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FakultasController;
+use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\ProdiController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\MataKuliahController;
+use App\Http\Controllers\SesiController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,4 +24,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+Route::resource('/fakultas', FakultasController::class);
+Route::resource('/prodi', ProdiController::class);
+Route::resource('/mahasiswa', MahasiswaController::class);
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::resource('/sesi', SesiController::class);
+Route::resource('/matakuliah', MataKuliahController::class);
+Route::resource('/jadwal', JadwalController::class);
+
+require __DIR__ . '/auth.php';
